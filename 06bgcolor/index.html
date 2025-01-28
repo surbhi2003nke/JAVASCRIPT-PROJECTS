@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Chose BG Color</title>
+  </head>
+  <body>
+    <div>
+      <h1>STOP AT YOUR LIKED BACKGROUND COLOR</h1>
+      <div>
+        <button id="start">START</button>
+        <button id="stop">STOP</button>
+      </div>
+    </div>
+
+    <script>
+        const bodyBG = document.querySelector('body');
+        const start = document.querySelector('#start');
+        const stop = document.querySelector('#stop');
+
+        const alphanumeric  = "0123456789ABCDEF";
+
+        const generateHash = () => {
+            let color = "#";
+            for(let i=0; i<6; i++){
+                let idx = Math.floor(Math.random()*16);
+                color += alphanumeric[idx];
+            }
+            console.log(color);
+            return color;
+        }
+
+        let intervalId;
+        start.addEventListener('click', () => {
+            intervalId = setInterval(() => {
+                const bgcolor = generateHash();
+                bodyBG.style.backgroundColor = bgcolor;
+            }, 1500);
+        })
+
+        stop.addEventListener('click', () => {
+            clearInterval(intervalId);
+        })
+
+
+
+
+
+
+    </script>
+  </body>
+</html>

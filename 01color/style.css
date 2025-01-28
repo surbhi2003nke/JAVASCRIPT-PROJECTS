@@ -1,0 +1,32 @@
+.container{
+    display:block;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+    padding: 12px;
+    text-align: center;
+}
+
+.btns{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    row-gap: 20px;
+}
+
+.color-btn{
+    padding: 20px;
+    border-radius: 0px;
+    margin: 10px;
+    height: 100px;
+    width: 100px;
+    border-color: #212121;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.color-btn:hover{
+    border-radius: 10px;
+    scale: 1.1;
+    transition: 0.4s ease-in-out;
+}
